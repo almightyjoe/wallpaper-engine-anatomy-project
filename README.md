@@ -102,12 +102,32 @@ serve the folder with any static file server (e.g. `npx serve .` or the VS Code
 "Live Server" extension) — this is purely a dev convenience and is **not** part
 of the shipped wallpaper, which runs fully offline inside Wallpaper Engine.
 
-To preview inside Wallpaper Engine itself:
+### Installing into Wallpaper Engine
 
-1. Open Wallpaper Engine → **Editor** → **New Wallpaper** → **Web**.
-2. Point it at this folder's `index.html`.
-3. Use the **Properties** panel to confirm the layer checkboxes and sidebar
-   position option work.
+Run `install.ps1` (or double-click `install.bat`) to copy this project into
+Wallpaper Engine's `projects\myprojects\` folder:
+
+```powershell
+.\install.ps1
+```
+
+It auto-detects your Wallpaper Engine install (including extra Steam library
+drives) and mirrors this folder into
+`...\wallpaper_engine\projects\myprojects\anatomy-wallpaper` (excluding
+`.git`/`.claude`/dev scripts). Re-run it after making changes to update the
+installed copy. If auto-detect fails, pass the path explicitly:
+
+```powershell
+.\install.ps1 -WallpaperEngineDir "D:\SteamLibrary\steamapps\common\wallpaper_engine"
+```
+
+Then in Wallpaper Engine:
+
+1. Open the **Editor** → **Open Project** and browse to the installed
+   `project.json` (or it may already appear in your local wallpaper library).
+2. Apply it as your wallpaper.
+3. Open **Properties** (right-click the running wallpaper, or from the editor)
+   to confirm the layer checkboxes and sidebar position option work live.
 
 ## Publishing
 
