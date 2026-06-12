@@ -34,30 +34,47 @@ html, body {
 #layer-stack {
   position: relative;
   height: 92vh;
-  aspect-ratio: 400 / 800;
+  /* Matches the "muscular" layer's native size (1000x1400), used as the
+     alignment anchor for the other layers - see js/layers-config.js */
+  aspect-ratio: 1000 / 1400;
 }
 
-.anatomy-layer-svg {
+.anatomy-layer-img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
+  object-fit: contain;
+  object-position: center top;
+  transform-origin: center top;
+  transform: translateY(var(--layer-offset-y, 0)) scale(var(--layer-scale, 1));
   transition: opacity 0.35s ease;
 }
 
-.anatomy-layer-svg.layer-hidden {
+.anatomy-layer-img.layer-hidden {
   opacity: 0;
   pointer-events: none;
 }
 
-/* Subtle interactivity: highlight a region on hover once it's clickable */
-.anatomy-layer-svg [data-region] {
-  transition: filter 0.2s ease;
+/* ---------- Hotspot overlay: clickable body-region targets ---------- */
+
+.anatomy-hotspot-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  pointer-events: none;
 }
 
-.anatomy-layer-svg [data-region]:hover {
+.anatomy-hotspot-svg [data-region] {
+  pointer-events: auto;
   cursor: pointer;
-  filter: brightness(1.25);
+  transition: fill 0.2s ease;
+}
+
+.anatomy-hotspot-svg [data-region]:hover {
+  fill: rgba(95, 180, 224, 0.18);
 }
 
 /* ---------- Sidebar: layer toggle buttons ---------- */

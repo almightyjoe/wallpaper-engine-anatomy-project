@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1400" class="anatomy-hotspot-svg">
+  <title>Click regions overlay (approximate)</title>
+  <desc>
+    Transparent click/hover targets for body regions and organs, positioned over
+    the layered anatomy art. Coordinates are an approximate first pass based on a
+    standard standing-figure layout in a 1000x1400 canvas (matching the
+    "muscular" layer's native size, used as the alignment anchor - see
+    SOURCES.md). Recalibrate against the final art once layer alignment
+    (scale/offsetY in layers-config.js) is tuned.
+  </desc>
+
+  <g id="region-head" data-region="head" fill="transparent">
+    <ellipse cx="500" cy="135" rx="80" ry="95" />
+  </g>
+
+  <g id="region-torso" data-region="torso" fill="transparent">
+    <rect x="365" y="225" width="270" height="450" rx="20" />
+  </g>
+
+  <g id="region-arms" data-region="arms" fill="transparent">
+    <rect x="215" y="235" width="125" height="500" rx="30" />
+    <rect x="660" y="235" width="125" height="500" rx="30" />
+  </g>
+
+  <g id="region-legs" data-region="legs" fill="transparent">
+    <rect x="385" y="690" width="115" height="660" rx="30" />
+    <rect x="500" y="690" width="115" height="660" rx="30" />
+  </g>
+
+  <!-- Organ-level hotspots, only meaningfully reachable once "organs" layer is visible -->
+  <g id="region-brain" data-region="brain" fill="transparent">
+    <ellipse cx="500" cy="110" rx="55" ry="45" />
+  </g>
+
+  <g id="region-heart" data-region="heart" fill="transparent">
+    <ellipse cx="525" cy="345" rx="55" ry="60" />
+  </g>
+
+  <g id="region-lung-left" data-region="lung-left" fill="transparent">
+    <ellipse cx="440" cy="330" rx="45" ry="75" />
+  </g>
+
+  <g id="region-lung-right" data-region="lung-right" fill="transparent">
+    <ellipse cx="580" cy="330" rx="45" ry="75" />
+  </g>
+
+  <g id="region-liver" data-region="liver" fill="transparent">
+    <ellipse cx="555" cy="455" rx="65" ry="45" />
+  </g>
+
+  <g id="region-stomach" data-region="stomach" fill="transparent">
+    <ellipse cx="440" cy="465" rx="50" ry="40" />
+  </g>
+
+  <g id="region-intestines" data-region="intestines" fill="transparent">
+    <ellipse cx="500" cy="565" rx="100" ry="80" />
+  </g>
+
+  <g id="region-kidney-left" data-region="kidney-left" fill="transparent">
+    <ellipse cx="445" cy="500" rx="22" ry="35" />
+  </g>
+
+  <g id="region-kidney-right" data-region="kidney-right" fill="transparent">
+    <ellipse cx="555" cy="500" rx="22" ry="35" />
+  </g>
+</svg>

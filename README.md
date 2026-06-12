@@ -39,39 +39,45 @@ anatomy-wallpaper/
 │   ├── regions-config.js  # Defines clickable body regions + future "scene" hooks
 │   └── main.js             # Loads layers, builds sidebar, wires clicks + WE properties
 └── assets/
-    ├── layers/             # One SVG per system, shared 400x800 viewBox/coordinate space
+    ├── layers/             # One real anatomy image per system, plus hotspots.svg overlay
+    │   └── SOURCES.md      # Source URL, author, license, dimensions per image
     └── preview/            # Wallpaper Engine workshop preview image(s)
 ```
 
-## Current status: placeholder artwork
+## Current status: real art, alignment in progress
 
-All `assets/layers/*.svg` files are **simplified geometric placeholders** sharing
-a common `viewBox="0 0 400 800"` coordinate space so they align when stacked.
-They establish the structure (groups, ids, `data-region` tags) that real artwork
-should follow.
+`assets/layers/*.svg` are now real, open-licensed medical illustrations (one
+per system), sourced from Wikimedia Commons / Anatomography — see
+`assets/layers/SOURCES.md` for exact source, author, and license per file.
 
-To replace with medically accurate art:
+They come from different projects with different aspect ratios and poses, so
+they don't align perfectly yet. Each is rendered as an `<img>` with
+`object-fit: contain` inside `#layer-stack` (anchored to the "muscular"
+layer's 1000x1400 size), and `js/layers-config.js` has a per-layer `scale` /
+`offsetY` you can tune to nudge a layer until it lines up with the others.
+This calibration is the current top priority — see `PLAN.md`.
 
-- Source candidates: [BodyParts3D / Anatomography](https://lifesciencedb.jp/bp3d/) (CC-BY-SA),
-  [Wikimedia Commons – Category:Human anatomy](https://commons.wikimedia.org/wiki/Category:Anatomy)
-  (mixed open licenses — check each file), [OpenStax anatomy illustrations](https://openstax.org/) (CC-BY).
-- Always record the source + license per file (see `assets/layers/SOURCES.md`, create as you go).
-- Keep the same `viewBox="0 0 400 800"` and the same `id="region-..."` /
-  `data-region="..."` attributes on swappable groups so `main.js` and
-  `regions-config.js` keep working without changes.
+Clickable regions are handled separately: `assets/layers/hotspots.svg` is a
+transparent overlay (rendered above all art layers) containing the
+`data-region` shapes (head, torso, arms, legs, heart, lungs, etc.). Its
+coordinates are estimates and should be rechecked once layer alignment is done.
 
 ## Adding or changing a layer
 
-1. Drop a new SVG into `assets/layers/`, using `viewBox="0 0 400 800"`.
+1. Drop a new image (SVG/PNG) into `assets/layers/`, and record its source +
+   license in `assets/layers/SOURCES.md`.
 2. Add an entry to `ANATOMY_LAYERS` in `js/layers-config.js` (id, file, label,
-   legend color, stacking position = array position, WE property name).
+   legend color, WE property name, stacking position = array position, and
+   starting `scale`/`offsetY` of `1`/`0`).
 3. Add a matching boolean property in `project.json` under
    `general.properties` (id must match `layer.property`).
+4. Toggle the new layer on/off against the others and tune `scale`/`offsetY`
+   until it roughly aligns.
 
 ## Adding a clickable region
 
-1. In the relevant SVG(s), tag the group/shape with `id="region-<name>"` and
-   `data-region="<name>"`.
+1. Add a shape with `id="region-<name>"` and `data-region="<name>"` to
+   `assets/layers/hotspots.svg`, positioned over the relevant body part.
 2. Add an entry to `ANATOMY_REGIONS` in `js/regions-config.js` with a label and
    description. Leave `scene: null` until a zoomed scene exists.
 

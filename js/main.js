@@ -22,7 +22,8 @@ const state = {
 init();
 
 async function init() {
-  await loadLayers();
+  loadLayers();
+  await loadHotspotOverlay();
   buildSidebar();
   wireRegionPanel();
   wireWallpaperEngineProperties();
@@ -30,29 +31,42 @@ async function init() {
 
 /* ---------- Layer loading ---------- */
 
-async function loadLayers() {
+function loadLayers() {
   // Stack order = array order, so later entries render on top.
-  for (let i = 0; i < ANATOMY_LAYERS.length; i++) {
-    const layer = ANATOMY_LAYERS[i];
-    try {
-      const response = await fetch(layer.file);
-      const svgText = await response.text();
-
-      const wrapper = document.createElement("div");
-      wrapper.innerHTML = svgText.trim();
-      const svgEl = wrapper.querySelector("svg");
-
-      svgEl.classList.add("anatomy-layer-svg");
-      svgEl.id = `layer-${layer.id}`;
-      svgEl.style.zIndex = String(i);
-      if (!layer.defaultVisible) {
-        svgEl.classList.add("layer-hidden");
-      }
-
-      layerStack.appendChild(svgEl);
-    } catch (err) {
-      console.error(`Failed to load layer "${layer.id}" from ${layer.file}`, err);
+  ANATOMY_LAYERS.forEach((layer, i) => {
+    const img = document.createElement("img");
+    img.src = layer.file;
+    img.alt = layer.label;
+    img.className = "anatomy-layer-img";
+    img.id = `layer-${layer.id}`;
+    img.style.zIndex = String(i);
+    img.style.setProperty("--layer-scale", String(layer.scale ?? 1));
+    img.style.setProperty("--layer-offset-y", `${layer.offsetY ?? 0}%`);
+    if (!layer.defaultVisible) {
+      img.classList.add("layer-hidden");
     }
+
+    layerStack.appendChild(img);
+  });
+}
+
+/* ---------- Hotspot overlay (clickable regions) ---------- */
+
+async function loadHotspotOverlay() {
+  try {
+    const response = await fetch(HOTSPOT_OVERLAY_FILE);
+    const svgText = await response.text();
+
+    const parsed = new DOMParser().parseFromString(svgText, "image/svg+xml");
+    const svgEl = parsed.documentElement;
+
+    svgEl.classList.add("anatomy-hotspot-svg");
+    svgEl.id = "hotspot-overlay";
+    svgEl.style.zIndex = String(ANATOMY_LAYERS.length);
+
+    layerStack.appendChild(svgEl);
+  } catch (err) {
+    console.error(`Failed to load hotspot overlay from ${HOTSPOT_OVERLAY_FILE}`, err);
   }
 }
 
@@ -87,14 +101,14 @@ function buildSidebar() {
 }
 
 function toggleLayer(layerId, forceVisible) {
-  const svgEl = document.getElementById(`layer-${layerId}`);
+  const layerImg = document.getElementById(`layer-${layerId}`);
   const button = toggleList.querySelector(`button[data-layer-id="${layerId}"]`);
-  if (!svgEl || !button) return;
+  if (!layerImg || !button) return;
 
-  const isHidden = svgEl.classList.contains("layer-hidden");
+  const isHidden = layerImg.classList.contains("layer-hidden");
   const willBeVisible = typeof forceVisible === "boolean" ? forceVisible : isHidden;
 
-  svgEl.classList.toggle("layer-hidden", !willBeVisible);
+  layerImg.classList.toggle("layer-hidden", !willBeVisible);
   button.classList.toggle("active", willBeVisible);
   button.setAttribute("aria-pressed", String(willBeVisible));
 }
