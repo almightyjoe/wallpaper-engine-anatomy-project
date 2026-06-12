@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 800" class="anatomy-layer-svg">
+  <title>Internal organs layer (placeholder)</title>
+  <desc>Simplified thoracic and abdominal organs. Replace with accurate organ artwork aligned to the same 400x800 coordinate space. Each organ is its own group/id for future click-to-zoom views.</desc>
+
+  <g id="region-torso" data-region="torso">
+    <!-- lungs -->
+    <path id="region-lung-left" data-region="lung-left" d="M195,160 C170,165 158,190 160,220 C162,245 175,255 192,250 C200,230 200,180 195,160 Z"
+          fill="#e8a0a0" stroke="#b06a6a" stroke-width="1.5" opacity="0.85" />
+    <path id="region-lung-right" data-region="lung-right" d="M205,160 C230,165 242,190 240,220 C238,245 225,255 208,250 C200,230 200,180 205,160 Z"
+          fill="#e8a0a0" stroke="#b06a6a" stroke-width="1.5" opacity="0.85" />
+
+    <!-- heart (shared landmark, drawn lightly here for context) -->
+    <path d="M195,195 C185,180 165,185 165,205 C165,222 195,240 200,245 C205,240 235,222 235,205 C235,185 215,180 205,195 C202,200 198,200 195,195 Z"
+          fill="#b03030" stroke="#7a1f1f" stroke-width="1.5" opacity="0.9" id="region-heart-organ" data-region="heart" />
+
+    <!-- liver -->
+    <path id="region-liver" data-region="liver" d="M205,255 C235,250 255,265 250,290 C245,305 215,308 200,300 C200,285 200,265 205,255 Z"
+          fill="#8a4a2e" stroke="#5c2f1a" stroke-width="1.5" opacity="0.9" />
+
+    <!-- stomach -->
+    <path id="region-stomach" data-region="stomach" d="M160,260 C150,275 152,295 165,305 C180,312 198,305 198,290 C198,275 185,260 160,260 Z"
+          fill="#c98ec9" stroke="#8e5a8e" stroke-width="1.5" opacity="0.9" />
+
+    <!-- intestines -->
+    <path id="region-intestines" data-region="intestines" d="M165,320 C150,330 150,350 165,355 C150,360 150,380 168,385 C155,392 158,410 175,412 C200,418 225,412 232,400 C245,392 240,372 225,368 C240,360 238,340 222,335 C235,328 232,310 215,308 C195,302 178,310 165,320 Z"
+          fill="#d9a45c" stroke="#a3763b" stroke-width="1.5" opacity="0.9" />
+
+    <!-- kidneys -->
+    <ellipse id="region-kidney-left" data-region="kidney-left" cx="175" cy="270" rx="10" ry="16" fill="#7a3b3b" stroke="#532727" stroke-width="1" opacity="0.85" />
+    <ellipse id="region-kidney-right" data-region="kidney-right" cx="225" cy="270" rx="10" ry="16" fill="#7a3b3b" stroke="#532727" stroke-width="1" opacity="0.85" />
+  </g>
+
+  <g id="region-head" data-region="head">
+    <ellipse id="region-brain-organ" data-region="brain" cx="200" cy="62" rx="30" ry="24" fill="#e8b0c8" stroke="#b0708e" stroke-width="1.5" opacity="0.85" />
+  </g>
+</svg>

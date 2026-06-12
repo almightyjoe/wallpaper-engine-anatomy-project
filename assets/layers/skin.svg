@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 800" class="anatomy-layer-svg">
+  <title>Skin / Surface layer (placeholder)</title>
+  <desc>Outermost layer. Replace shapes with traced, open-licensed anatomical artwork (e.g. BodyParts3D, Wikimedia Commons "Human anatomy" category) at the same 400x800 coordinate scale.</desc>
+
+  <g id="region-head" data-region="head" fill="#e8b08a" stroke="#c9905f" stroke-width="2">
+    <circle cx="200" cy="70" r="45" />
+  </g>
+
+  <g id="region-torso" data-region="torso" fill="#e8b08a" stroke="#c9905f" stroke-width="2">
+    <rect x="185" y="108" width="30" height="28" />
+    <rect x="130" y="134" width="140" height="225" rx="30" />
+  </g>
+
+  <g id="region-arms" data-region="arms" fill="#e8b08a" stroke="#c9905f" stroke-width="2">
+    <rect x="78" y="140" width="44" height="235" rx="20" />
+    <rect x="278" y="140" width="44" height="235" rx="20" />
+    <rect x="80" y="370" width="40" height="80" rx="16" />
+    <rect x="280" y="370" width="40" height="80" rx="16" />
+  </g>
+
+  <g id="region-legs" data-region="legs" fill="#e8b08a" stroke="#c9905f" stroke-width="2">
+    <rect x="140" y="355" width="55" height="355" rx="25" />
+    <rect x="205" y="355" width="55" height="355" rx="25" />
+    <ellipse cx="167" cy="715" rx="32" ry="14" />
+    <ellipse cx="233" cy="715" rx="32" ry="14" />
+  </g>
+</svg>

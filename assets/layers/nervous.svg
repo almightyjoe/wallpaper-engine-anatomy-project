@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 800" class="anatomy-layer-svg">
+  <title>Nervous system layer (placeholder)</title>
+  <desc>Simplified brain, spinal cord, and major peripheral nerve trunks. Replace with accurate neural artwork aligned to the same 400x800 coordinate space.</desc>
+
+  <g id="region-head" data-region="head" fill="none" stroke="#e8d44d" stroke-width="2">
+    <ellipse cx="200" cy="62" rx="32" ry="26" fill="#e8d44d" opacity="0.5" id="region-brain" data-region="brain" />
+    <path d="M180,50 C190,40 210,40 220,50" />
+    <path d="M180,65 C190,75 210,75 220,65" />
+  </g>
+
+  <g id="region-torso" data-region="torso" fill="none" stroke="#e8d44d" stroke-width="3">
+    <!-- spinal cord -->
+    <line x1="200" y1="100" x2="200" y2="358" />
+    <!-- nerve branches -->
+    <path d="M200,150 C180,160 165,170 155,185" stroke-width="1.5" />
+    <path d="M200,150 C220,160 235,170 245,185" stroke-width="1.5" />
+    <path d="M200,230 C185,245 170,260 160,280" stroke-width="1.5" />
+    <path d="M200,230 C215,245 230,260 240,280" stroke-width="1.5" />
+  </g>
+
+  <g id="region-arms" data-region="arms" fill="none" stroke="#e8d44d" stroke-width="1.5">
+    <path d="M155,185 C130,210 110,250 100,300 C97,340 98,370 98,395" />
+    <path d="M245,185 C270,210 290,250 300,300 C303,340 302,370 302,395" />
+  </g>
+
+  <g id="region-legs" data-region="legs" fill="none" stroke="#e8d44d" stroke-width="1.5">
+    <!-- sciatic nerve -->
+    <path d="M195,355 C185,450 175,600 167,705" />
+    <path d="M205,355 C215,450 225,600 233,705" />
+  </g>
+</svg>

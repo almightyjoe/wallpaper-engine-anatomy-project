@@ -1,0 +1,61 @@
+{
+  "file": "index.html",
+  "type": "web",
+  "title": "Interactive Human Anatomy",
+  "description": "A layered, medically-informative anatomy wallpaper. Toggle systems (skeletal, muscular, circulatory, nervous, organs, skin) on or off, and click body regions for closer anatomical views.",
+  "tags": [
+    "Abstract",
+    "Animated",
+    "Medical",
+    "Educational"
+  ],
+  "general": {
+    "supportsaudioprocessing": false,
+    "properties": {
+      "sidebarposition": {
+        "text": "Sidebar position",
+        "type": "combo",
+        "value": "left",
+        "options": [
+          { "label": "Left", "value": "left" },
+          { "label": "Right", "value": "right" }
+        ]
+      },
+      "showlabels": {
+        "text": "Show layer labels",
+        "type": "bool",
+        "value": true
+      },
+      "layer_skin": {
+        "text": "Layer: Skin / Surface",
+        "type": "bool",
+        "value": true
+      },
+      "layer_muscular": {
+        "text": "Layer: Muscular system",
+        "type": "bool",
+        "value": false
+      },
+      "layer_circulatory": {
+        "text": "Layer: Circulatory system",
+        "type": "bool",
+        "value": false
+      },
+      "layer_nervous": {
+        "text": "Layer: Nervous system",
+        "type": "bool",
+        "value": false
+      },
+      "layer_organs": {
+        "text": "Layer: Organs",
+        "type": "bool",
+        "value": false
+      },
+      "layer_skeletal": {
+        "text": "Layer: Skeletal system",
+        "type": "bool",
+        "value": false
+      }
+    }
+  }
+}

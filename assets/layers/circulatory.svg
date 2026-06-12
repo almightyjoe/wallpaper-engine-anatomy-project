@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 800" class="anatomy-layer-svg">
+  <title>Circulatory system layer (placeholder)</title>
+  <desc>Simplified arterial (red) and venous (blue) trunks plus heart. Replace with accurate vascular artwork aligned to the same 400x800 coordinate space.</desc>
+
+  <g id="region-torso" data-region="torso" fill="none">
+    <!-- heart -->
+    <path d="M195,195 C185,180 160,185 160,205 C160,225 195,245 200,250 C205,245 240,225 240,205 C240,185 215,180 205,195 C202,200 198,200 195,195 Z"
+          fill="#b03030" stroke="#7a1f1f" stroke-width="1.5" data-region="heart" id="region-heart" />
+    <!-- aorta / arterial trunk -->
+    <path d="M200,250 C200,290 200,330 200,355" stroke="#c0392b" stroke-width="5" fill="none" />
+    <!-- venous trunk -->
+    <path d="M210,250 C212,290 212,330 212,355" stroke="#2e6da4" stroke-width="5" fill="none" />
+  </g>
+
+  <g id="region-head" data-region="head" fill="none">
+    <path d="M200,130 C200,110 190,95 200,80 C210,95 200,110 200,130 Z" stroke="#c0392b" stroke-width="3" />
+    <path d="M210,130 C212,112 220,98 212,82" stroke="#2e6da4" stroke-width="3" fill="none" />
+  </g>
+
+  <g id="region-arms" data-region="arms" fill="none">
+    <!-- arteries -->
+    <path d="M180,165 C150,180 110,200 100,250 C95,290 97,340 98,390" stroke="#c0392b" stroke-width="3" />
+    <path d="M220,165 C250,180 290,200 300,250 C305,290 303,340 302,390" stroke="#c0392b" stroke-width="3" />
+    <!-- veins -->
+    <path d="M186,170 C158,186 122,206 112,255 C108,295 110,345 110,390" stroke="#2e6da4" stroke-width="3" />
+    <path d="M214,170 C242,186 278,206 288,255 C292,295 290,345 290,390" stroke="#2e6da4" stroke-width="3" />
+  </g>
+
+  <g id="region-legs" data-region="legs" fill="none">
+    <!-- femoral arteries -->
+    <path d="M195,358 C185,450 175,600 167,705" stroke="#c0392b" stroke-width="4" />
+    <path d="M205,358 C215,450 225,600 233,705" stroke="#c0392b" stroke-width="4" />
+    <!-- veins -->
+    <path d="M188,358 C180,450 172,600 160,705" stroke="#2e6da4" stroke-width="3" />
+    <path d="M212,358 C220,450 228,600 240,705" stroke="#2e6da4" stroke-width="3" />
+  </g>
+</svg>

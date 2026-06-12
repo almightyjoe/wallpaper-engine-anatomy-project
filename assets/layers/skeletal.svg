@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 800" class="anatomy-layer-svg">
+  <title>Skeletal system layer (placeholder)</title>
+  <desc>206 bones simplified to major groups: skull, spine, ribcage, pelvis, and limb bones. Replace with accurate skeletal artwork aligned to the same 400x800 coordinate space.</desc>
+
+  <g id="region-head" data-region="head" fill="none" stroke="#f2efe9" stroke-width="2">
+    <circle cx="200" cy="68" r="38" />
+    <path d="M180,100 L180,112 L220,112 L220,100" />
+    <line x1="200" y1="106" x2="200" y2="130" />
+  </g>
+
+  <g id="region-torso" data-region="torso" fill="none" stroke="#f2efe9" stroke-width="2">
+    <!-- spine -->
+    <line x1="200" y1="106" x2="200" y2="355" stroke-dasharray="6,4" />
+    <!-- ribcage -->
+    <path d="M165,150 C150,170 148,210 158,250" />
+    <path d="M235,150 C250,170 252,210 242,250" />
+    <path d="M170,160 C185,150 215,150 230,160" />
+    <path d="M168,185 C185,178 215,178 232,185" />
+    <path d="M165,212 C185,205 215,205 235,212" />
+    <path d="M163,238 C185,233 215,233 237,238" />
+    <!-- pelvis -->
+    <path d="M155,330 C160,360 185,365 200,355 C215,365 240,360 245,330" />
+  </g>
+
+  <g id="region-arms" data-region="arms" fill="none" stroke="#f2efe9" stroke-width="2">
+    <!-- left arm: humerus, radius/ulna -->
+    <line x1="160" y1="155" x2="100" y2="270" />
+    <line x1="100" y1="270" x2="98" y2="370" />
+    <circle cx="160" cy="155" r="5" />
+    <!-- right arm -->
+    <line x1="240" y1="155" x2="300" y2="270" />
+    <line x1="300" y1="270" x2="302" y2="370" />
+    <circle cx="240" cy="155" r="5" />
+    <!-- hands -->
+    <circle cx="98" cy="400" r="10" />
+    <circle cx="302" cy="400" r="10" />
+  </g>
+
+  <g id="region-legs" data-region="legs" fill="none" stroke="#f2efe9" stroke-width="2">
+    <!-- left leg: femur, tibia/fibula -->
+    <line x1="180" y1="358" x2="170" y2="540" />
+    <line x1="170" y1="540" x2="167" y2="700" />
+    <!-- right leg -->
+    <line x1="220" y1="358" x2="230" y2="540" />
+    <line x1="230" y1="540" x2="233" y2="700" />
+    <!-- knees -->
+    <circle cx="170" cy="540" r="6" />
+    <circle cx="230" cy="540" r="6" />
+    <!-- feet -->
+    <ellipse cx="167" cy="715" rx="28" ry="8" />
+    <ellipse cx="233" cy="715" rx="28" ry="8" />
+  </g>
+</svg>

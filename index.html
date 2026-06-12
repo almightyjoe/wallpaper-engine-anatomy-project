@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Human Anatomy Wallpaper</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="stage">
+    <div id="layer-stack"><!-- layer SVGs injected here by main.js --></div>
+  </div>
+
+  <aside id="sidebar" class="sidebar sidebar-left">
+    <h1 class="sidebar-title">Systems</h1>
+    <ul id="layer-toggle-list" class="layer-toggle-list"><!-- buttons injected by main.js --></ul>
+  </aside>
+
+  <div id="region-panel" class="region-panel hidden">
+    <button id="region-panel-close" class="region-panel-close" aria-label="Close">&times;</button>
+    <h2 id="region-panel-title"></h2>
+    <p id="region-panel-body"></p>
+    <p id="region-panel-scene-note" class="region-panel-note hidden">
+      Zoomed anatomical view for this region is coming soon.
+    </p>
+  </div>
+
+  <script src="js/layers-config.js"></script>
+  <script src="js/regions-config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
